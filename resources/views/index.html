@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drop Party</title>
+    <link rel="stylesheet" href="../styles/app.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+<body>
+    <header style="-webkit-app-region: drag">
+        Drop Party
+    </header>
+
+    <main>
+        <div id="login" class="hidden sign-in initial">
+            <textarea data-id="signInToken" class="sign-in-token hidden" rows="3" placeholder="Please paste your sign in key here"></textarea>
+            <a class="button" data-id="signIn" href="http://localhost:3000/authenticate?show=true">Sign In</a>
+            <button class="button secondary hidden" data-id="signInCancel">Cancel</button>
+        </div>
+        <div id="loggedIn" class="hidden">
+            <form action="" method="get">
+                <label class="control control--checkbox" for="autoUploadImages">Auto upload images from desktop
+                    <input type="checkbox" id="autoUploadImages" name="autoUploadImages" value="1">
+                    <div class="control__indicator"></div>
+                </label>
+
+                <!-- <label class="control control--checkbox" for="autoLaunch">Launch Drop Party on system startup
+                    <input type="checkbox" id="autoLaunch" name="autoLaunch" value="1">
+                    <div class="control__indicator"></div>
+                </label> -->
+
+                <label class="control control--checkbox" for="keepActiveInTrayOnClose">Keep active in tray on close
+                    <input type="checkbox" id="keepActiveInTrayOnClose" name="keepActiveInTrayOnClose" value="1">
+                    <div class="control__indicator"></div>
+                </label>
+
+                <!-- <label class="control control--checkbox" for="useShortenedLinks">Use shortened links
+                    <input type="checkbox" id="useShortenedLinks" name="useShortenedLinks" value="1">
+                    <div class="control__indicator"></div>
+                </label> -->
+            </form>
+
+            <button class="button" data-id="signOut" style="margin-top: 10px;">Sign out</button>
+        </div>
+    </main>
+
+    <script>
+        require('../scripts/renderer.js');
+    </script>
+</body>
+</html>

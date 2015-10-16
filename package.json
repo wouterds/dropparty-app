@@ -1,0 +1,29 @@
+{
+  "name": "dropparty",
+  "description": "Easy screenshot and file sharing",
+  "version": "0.0.1-alpha",
+  "author": "Wouter De Schuyter <wouter.de.schuyter@gmail.com>",
+  "main": "resources/scripts/main.js",
+  "build": {
+    "appId": "xyz.dropparty.app",
+    "mac": {
+      "category": "public.app-category.productivity"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "dependencies": {
+    "auto-launch": "^5.0.1",
+    "chokidar": "^1.7.0",
+    "electron-main-notification": "^1.0.1",
+    "form-data": "^2.3.1"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-builder": "^19.43.0"
+  }
+}

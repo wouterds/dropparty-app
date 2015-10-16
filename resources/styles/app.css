@@ -1,0 +1,281 @@
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-user-select: none;
+}
+
+body {
+  font-size: 1.4em;
+  min-height: 100%;
+  background: #fff;
+  color: #A5A5A5;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+  position: relative;
+  animation: fadein 300ms;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0 0 15px;
+}
+
+header {
+  text-align: center;
+  line-height: 38px;
+  height: 38px;
+  color: #fff;
+  background: linear-gradient(#006eff, #0064e8);
+  border-bottom: 1px solid #005cd6;
+}
+
+main {
+  padding: 15px 27px 20px 15px;
+}
+
+.button {
+  border: 2px solid #006eff;
+  background: #006eff;
+  height: 32px;
+  line-height: 33px;
+  padding: 0 24px;
+  border-radius: 18px;
+  font-weight: 400;
+  font-size: 0.9em;
+  outline: 0;
+  text-decoration: none;
+  display: inline;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  transition: 100ms ease-in-out background, 100ms ease-in-out border;
+}
+
+.sign-in.initial {
+  padding: 35px;
+  text-align: center;
+}
+
+.sign-in-token {
+  border: 1px dashed #413e5c;
+  background: #fff;
+  padding: 5px;
+  line-height: 1.4;
+  font-size: 1em;
+  font-family: inherit;
+  outline: 0;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.sign-in-token:focus {
+  border-color: #006eff;
+}
+
+.button.secondary {
+  background: none;
+  color: #999;
+  border-color: #AAA;
+}
+
+.button.secondary:hover {
+  background: none;
+  border-color: #777;
+  color: #777;
+}
+
+.button:hover {
+  background: #0062e3;
+  border-color: #0062e3;
+}
+
+.button + .button {
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-wrapper {
+  padding: 5px 0 17px;
+}
+
+.input-wrapper:first-child {
+  padding-top: 0;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  line-height: normal;
+}
+
+.input {
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #d3d3d3;
+  font-size: 0.9em;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 400px;
+  color: #4c4c4c;
+  font-family: inherit;
+  font-weight: 700;
+  caret-color: #006eff;
+}
+
+.input:focus {
+    border-color: #006eff;
+}
+
+.input-wrapper.buttons {
+  margin-top: 5px;
+}
+
+.form-link {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 10px;
+  color: #006eff;
+  text-decoration: none;
+}
+
+.form-link:hover {
+  color: #1C2D42;
+}
+
+.toast {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.toast-container {
+}
+
+.toast-wrapper {
+  color: #fff;
+  background: #000;
+  opacity: 0;
+  font-size: 0.9em;
+  transition: 100ms ease-in-out opacity;
+  vertical-align: middle;
+  line-height: 34px;
+  padding-left: 32px;
+  height: 32px;
+}
+
+.toast.show .toast-wrapper {
+  opacity: 0.8;
+}
+
+.toast.success .toast-icon {
+  background-image: url('../images/status/success.png');
+}
+
+.toast.failure .toast-icon {
+  background-image: url('../images/status/failed.png');
+}
+
+.toast-icon {
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-top: 3px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #006eff;
+  border-radius: 2px;
+  transition: background ease-in-out 100ms;
+}
+
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  transition: opacity ease-in-out 100ms;
+}
+
+.control input:checked ~ .control__indicator {
+  background: #006eff;
+}
+
+.control input:checked ~ .control__indicator:after {
+  display: block;
+  opacity: 1;
+}
+
+.control--checkbox .control__indicator:after {
+  left: 7px;
+  top: 3px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
